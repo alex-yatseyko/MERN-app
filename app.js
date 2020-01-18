@@ -10,7 +10,7 @@ const PORT = config.get('port') || 5000
 
 async function start() {
     try {
-        await mongoose.connect()
+        await mongoose.connect(config.get('mongoUri'))
     } catch (e) {
         console.log('Server error', e.message)
         process.exit(1)
